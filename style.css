@@ -92,15 +92,21 @@ img {
     list-style: none;
     gap: 2.5rem;
     align-items: center;
+    z-index: 1001;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-light);
-    font-weight: 600;
+    color: #fff; /* Explicit white for contrast */
+    font-weight: 700;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
 }
 
 .cta-btn {
@@ -154,6 +160,47 @@ img {
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 3rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(107, 78, 113, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-3px);
 }
 
 /* Sections */
@@ -213,6 +260,27 @@ section {
     padding: 3rem 2rem;
     border-radius: 30px;
     border: 1px solid rgba(255,255,255,0.1);
+    transition: var(--transition);
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.mission-card.coral { border-top: 5px solid var(--coral); }
+.mission-card.blue { border-top: 5px solid #4a90e2; }
+.mission-card.green { border-top: 5px solid #50c878; }
+
+.mission-card h3 {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.mission-card p {
+    color: #ccc;
+    font-size: 0.95rem;
 }
 
 /* Programs Section */
