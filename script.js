@@ -239,3 +239,33 @@ document.querySelectorAll('section').forEach(section => {
         ease: 'power3.out'
     });
 });
+
+/* Magnetic Buttons */
+document.querySelectorAll('.btn, .cta-btn, .shop-btn, .mobile-nav-item, .social-link').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: 'power2.out' });
+    });
+    btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+    });
+});
+
+// Hero Staggered Reveal
+gsap.from('.hero-title', { opacity: 0, y: 100, duration: 1.5, ease: 'power4.out', delay: 1 });
+gsap.from('.hero-subtitle', { opacity: 0, x: -50, duration: 1, ease: 'power3.out', delay: 1.8 });
+gsap.from('.hero-actions .btn', { opacity: 0, scale: 0.8, duration: 0.8, stagger: 0.2, ease: 'back.out(1.7)', delay: 2.2 });
+
+// Preloader Logic
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if(preloader) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+        }, 1000);
+    }
+});
+
