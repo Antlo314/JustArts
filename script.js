@@ -50,14 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const animateCounters = () => {
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
+            gsap.from(counter, { scale: 1.5, duration: 1, ease: 'elastic.out(1, 0.3)' });
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
-                const increment = target / 200;
+                const increment = target / 100;
 
                 if (count < target) {
                     counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 1);
+                    setTimeout(updateCount, 15);
                 } else {
                     counter.innerText = target;
                 }
@@ -301,5 +302,35 @@ document.querySelectorAll('.nav-links a, .mobile-nav-links a, .mobile-nav-item')
             }
         }
     };
+});
+
+
+/* Elite Script Polish */
+window.addEventListener('scroll', () => {
+    // Scroll Progress Bar
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.querySelector('.scroll-progress');
+    if(progressBar) progressBar.style.width = scrolled + '%';
+
+    // Scroll-Spy Highlighting
+    const sections = document.querySelectorAll('section, header');
+    const navItems = document.querySelectorAll('.mobile-nav-item');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').substring(1) === current) {
+            item.classList.add('active');
+        }
+    });
 });
 

@@ -782,3 +782,36 @@ html, body {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
+
+/* Elite Final Polish */
+.scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--gold); z-index: 2001; }
+.noise-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.05; pointer-events: none; z-index: 9999; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* App-like Haptic feel */
+.btn:active, .cta-btn:active, .mobile-nav-item:active { transform: scale(0.95); transition: 0.1s; }
+
+/* Mobile Bottom Sheet Modal */
+@media (max-width: 968px) {
+    .modal-content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        max-height: 90vh;
+        border-radius: 30px 30px 0 0;
+        transform: translateY(100%);
+        transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    .portfolio-modal.active .modal-content {
+        transform: translateY(0);
+    }
+    .modal-layout { flex-direction: column; }
+    .modal-image { height: 300px; }
+    .close-modal { top: 1rem; right: 1.5rem; }
+}
