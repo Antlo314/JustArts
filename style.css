@@ -90,16 +90,12 @@ img {
 }
 
 .logo img {
-    height: 50px;
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
-    border-radius: 50%; /* Make square icon look circular if it has a background */
+    height: 65px;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
 }
 
 .logo-text {
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 1.8rem;
-    color: var(--gold);
-    letter-spacing: 2px;
+    display: none;
 }
 
 .nav-links {
@@ -661,7 +657,9 @@ html, body {
 .event-meta { color: var(--gold) !important; }
 
 /* Logo Polish */
-.logo img { background: #fff; padding: 5px; border-radius: 50%; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+.logo img { 
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4)); 
+}
 
 
 /* Support Section Styles */
