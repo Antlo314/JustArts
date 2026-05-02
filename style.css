@@ -423,9 +423,9 @@ section {
 }
 
 .ticker-content {
-    display: inline-block;
-    padding-left: 100%;
-    animation: ticker 20s linear infinite; /* 2x faster (from 40s) */
+    display: flex;
+    width: fit-content;
+    animation: ticker 20s linear infinite; /* Adjusted for 2x speed with 50% loop */
 }
 
 .ticker-content span {
@@ -434,7 +434,7 @@ section {
 
 @keyframes ticker {
     0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); } /* Loop halfway for seamlessness */
 }
 
 /* Footer Styles */
@@ -727,7 +727,7 @@ footer {
     }
 
     .ticker-content {
-        animation-duration: 7.5s !important; /* 2x faster (from 15s) */
+        animation-duration: 10s !important; /* 2x faster on mobile with 50% loop */
     }
 
     .floating-donate {
