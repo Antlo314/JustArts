@@ -25,8 +25,25 @@
                 <li><a href="#support">Support</a></li>
                 <li><a href="#contact" class="cta-btn">Contact Us</a></li>
             </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="close-menu">&times;</div>
+        <ul class="mobile-nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <header id="hero">
         <div class="hero-overlay"></div>
@@ -157,6 +174,15 @@
         </div>
     </section>
 
+    <section id="partners">
+        <div class="container">
+            <p class="partners-label">PROUDLY PARTNERED WITH</p>
+            <div class="partners-scroll">
+                <img src="partners.png" alt="Community Partners">
+            </div>
+        </div>
+    </section>
+
     <section id="founder">
         <div class="founder-bg"></div>
         <div class="container">
@@ -250,6 +276,56 @@
                         <li>All Visionary perks</li>
                     </ul>
                     <a href="#" class="support-btn">Inquire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info-side">
+                    <h2 class="section-title">GET IN TOUCH</h2>
+                    <p>Have questions about our programs or want to get involved? Send us a message and we'll get back to you within 24 hours.</p>
+                    <div class="direct-contact">
+                        <div class="item">
+                            <span class="icon">📞</span>
+                            <p>470-974-4524</p>
+                        </div>
+                        <div class="item">
+                            <span class="icon">✉️</span>
+                            <p>Justarts2026@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-side">
+                    <form id="just-arts-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Program of Interest</label>
+                            <select>
+                                <option>General Inquiry</option>
+                                <option>Visual Arts</option>
+                                <option>Performing Arts</option>
+                                <option>Culinary Arts</option>
+                                <option>Sponsorship</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Message</label>
+                            <textarea placeholder="How can we help you?" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>

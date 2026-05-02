@@ -723,3 +723,224 @@ footer {
     .gallery-item.large { grid-row: auto; height: 300px; }
     .support-card.featured { transform: scale(1); }
 }
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.mobile-menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--dark-bg);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.mobile-menu-overlay.active {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 3rem;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin: 2rem 0;
+}
+
+.mobile-nav-links a {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
+    transition: var(--transition);
+}
+
+.mobile-nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Partners Section */
+#partners {
+    background: #0a0a0a;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.partners-label {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #555;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.partners-scroll img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.5;
+    filter: grayscale(1);
+    transition: var(--transition);
+}
+
+.partners-scroll img:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+/* Contact Form Section */
+#contact-form {
+    background: #111;
+}
+
+.contact-layout {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.contact-info-side {
+    flex: 1;
+}
+
+.contact-info-side p {
+    color: #999;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.direct-contact .item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.direct-contact .icon {
+    font-size: 1.5rem;
+    background: rgba(255, 215, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.form-side {
+    flex: 1.5;
+    background: rgba(255,255,255,0.02);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background: var(--gold);
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 968px) {
+    .mobile-menu-toggle { display: flex; }
+    .nav-links { display: none; }
+    
+    .hero-title { font-size: 3.5rem; }
+    .section-title { font-size: 2.5rem; }
+    
+    .contact-layout { flex-direction: column; gap: 3rem; }
+    .form-side { padding: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.8rem; }
+    .mission-card { padding: 2rem 1.5rem; }
+    .founder-name { font-size: 3rem; }
+    .event-card { padding: 2rem; }
+}
