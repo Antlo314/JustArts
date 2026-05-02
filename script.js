@@ -136,9 +136,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Auto slide
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % dots.length;
-            updateSlider(currentSlide);
-        }, 6000);
-    }
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all others
+            faqItems.forEach(i => i.classList.remove('active'));
+            
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
 });
