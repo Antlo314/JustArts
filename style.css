@@ -90,8 +90,9 @@ img {
 }
 
 .logo img {
-    height: 65px;
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+    height: 75px; /* Slightly larger for better icon visibility */
+    mix-blend-mode: screen; /* Makes black background transparent */
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .logo-text {
@@ -657,8 +658,9 @@ html, body {
 .event-meta { color: var(--gold) !important; }
 
 /* Logo Polish */
-.logo img { 
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4)); 
+.logo img, .footer-logo { 
+    mix-blend-mode: screen;
+    filter: brightness(1.2);
 }
 
 
