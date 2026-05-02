@@ -152,4 +152,67 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Impact Calculator
+    const slider = document.getElementById('impact-slider');
+    const amountDisplay = document.getElementById('calc-amount');
+    const textDisplay = document.getElementById('impact-text');
+
+    if (slider) {
+        const impactLevels = [
+            { threshold: 25, text: "Provides one week of art supplies for a student." },
+            { threshold: 50, text: "Funds a specialized guest artist masterclass." },
+            { threshold: 100, text: "Sponsors one full month of materials for a student." },
+            { threshold: 250, text: "Covers a full scholarship for a 6-week culinary intensive." },
+            { threshold: 500, text: "Funds the costume and set design for a theatre production." },
+            { threshold: 750, text: "Powers our community outreach program for an entire neighborhood." },
+            { threshold: 1000, text: "Sponsors a student's entire creative journey for one year." }
+        ];
+
+        slider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            amountDisplay.innerText = `$${val}`;
+            
+            // Fixed reverse logic
+            const levels = [...impactLevels].reverse();
+            const level = levels.find(l => val >= l.threshold);
+            if (level) textDisplay.innerText = level.text;
+        });
+    }
+
+    // Portfolio Modals
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('portfolio-modal');
+    const closeModal = document.querySelector('.close-modal');
+
+    if (modal && galleryItems.length > 0) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img').src;
+                const title = item.querySelector('h4').innerText;
+                const student = item.getAttribute('data-student');
+                const age = item.getAttribute('data-age');
+                const statement = item.getAttribute('data-statement');
+
+                document.getElementById('modal-img').src = img;
+                document.getElementById('modal-title').innerText = title;
+                document.getElementById('modal-student').innerText = student;
+                document.getElementById('modal-age').innerText = age;
+                document.getElementById('modal-statement').innerText = statement;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const hideModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeModal.addEventListener('click', hideModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) hideModal();
+        });
+    }
 });

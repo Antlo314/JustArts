@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="community-ticker">
+        <div class="ticker-content">
+            <span>🚀 NEXT WORKSHOP: VISUAL ARTS AT ECHO BASE - SATURDAY 10AM</span>
+            <span>🎨 30+ NEW STUDENTS ENROLLED THIS MONTH</span>
+            <span>🎭 THEATRE COMPANY TICKETS GOING LIVE SOON</span>
+            <span>🤝 NEW PARTNER: ATHENS ARTS COUNCIL</span>
+            <span>🚀 NEXT WORKSHOP: VISUAL ARTS AT ECHO BASE - SATURDAY 10AM</span>
+        </div>
+    </div>
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -192,25 +201,25 @@
         <div class="container">
             <h2 class="section-title">STUDENT WORK</h2>
             <div class="gallery-grid">
-                <div class="gallery-item large">
+                <div class="gallery-item large" data-student="Amara" data-age="15" data-statement="This piece represents the layers of history in my neighborhood and how we can paint a brighter future.">
                     <img src="gallery-1.png" alt="Visual Arts Work">
                     <div class="gallery-info">
                         <span>Visual Arts</span>
-                        <h4>Vibrant Expression</h4>
+                        <h4>VIBRANT EXPRESSION</h4>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-student="Marcus" data-age="17" data-statement="Cooking taught me that precision and passion must go together to create something beautiful for others.">
                     <img src="gallery-2.png" alt="Culinary Work">
                     <div class="gallery-info">
                         <span>Culinary Arts</span>
-                        <h4>Plated Perfection</h4>
+                        <h4>PLATED PERFECTION</h4>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-student="Elena" data-age="14" data-statement="On stage, I can be anyone. Just Arts gave me my voice back when I thought I had lost it.">
                     <img src="gallery-3.png" alt="Theatre Work">
                     <div class="gallery-info">
                         <span>Performing Arts</span>
-                        <h4>Dramatic Discovery</h4>
+                        <h4>DRAMATIC DISCOVERY</h4>
                     </div>
                 </div>
             </div>
@@ -305,6 +314,25 @@
             <div class="support-header">
                 <h2 class="section-title white">SUPPORT THE MOVEMENT</h2>
                 <p class="support-intro">Help us continue cultivating the next generation of creative and community leaders.</p>
+                
+                <div class="impact-calculator">
+                    <h3>SEE YOUR IMPACT</h3>
+                    <div class="calc-box">
+                        <div class="slider-container">
+                            <input type="range" min="25" max="1000" value="100" step="25" id="impact-slider">
+                            <div class="slider-labels">
+                                <span>$25</span>
+                                <span>$1,000</span>
+                            </div>
+                        </div>
+                        <div class="impact-display">
+                            <div class="amount-circle">
+                                <span id="calc-amount">$100</span>
+                            </div>
+                            <p id="impact-text">Sponsors one month of materials for a student.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="support-grid">
                 <div class="support-card">
@@ -467,6 +495,33 @@
         </div>
     </section>
 
+    <section id="shop">
+        <div class="container">
+            <div class="shop-header">
+                <h2 class="section-title white">OFFICIAL MERCH</h2>
+                <p>Support the programs by wearing the movement. 100% of proceeds go to student materials.</p>
+            </div>
+            <div class="shop-grid">
+                <div class="shop-item">
+                    <div class="product-img">
+                        <img src="merch-hoodie.png" alt="Just Arts Hoodie">
+                    </div>
+                    <h4>JUST ARTS SIGNATURE HOODIE</h4>
+                    <span class="price">$55.00</span>
+                    <a href="#" class="shop-btn">View Item</a>
+                </div>
+                <div class="shop-item">
+                    <div class="product-img">
+                        <img src="merch-tote.png" alt="Just Arts Tote">
+                    </div>
+                    <h4>COMMUNITY IMPACT TOTE</h4>
+                    <span class="price">$25.00</span>
+                    <a href="#" class="shop-btn">View Item</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
@@ -496,6 +551,28 @@
             </div>
         </div>
     </footer>
+
+    <div class="portfolio-modal" id="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-layout">
+                <div class="modal-image">
+                    <img src="" alt="Student Work" id="modal-img">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">TITLE</h2>
+                    <div class="student-meta">
+                        <span id="modal-student">Student</span> • <span id="modal-age">Age</span>
+                    </div>
+                    <div class="statement-box">
+                        <h4>ARTIST STATEMENT</h4>
+                        <p id="modal-statement">Statement goes here...</p>
+                    </div>
+                    <a href="#support" class="support-artist-btn">Support Programs Like This</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
