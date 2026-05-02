@@ -990,3 +990,198 @@ footer {
     .founder-name { font-size: 3rem; }
     .event-card { padding: 2rem; }
 }
+
+/* Testimonial Slider */
+#testimonials {
+    background: var(--navy);
+    padding: 100px 0;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: var(--transition);
+}
+
+.testimonial-card {
+    min-width: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+
+.testimonial-card .quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.testimonial-card .author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.testimonial-card .name {
+    font-weight: 800;
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+.testimonial-card .role {
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: var(--gold);
+    width: 30px;
+    border-radius: 5px;
+}
+
+/* Map Section */
+#map {
+    padding: 0;
+}
+
+.container.full-width {
+    max-width: 100%;
+    padding: 0;
+}
+
+.map-container {
+    position: relative;
+    line-height: 0;
+}
+
+.map-container iframe {
+    filter: grayscale(1) invert(0.9) contrast(1.2);
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background: var(--dark-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.map-overlay h3 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.map-overlay p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Newsletter Section */
+#newsletter {
+    margin-top: -60px;
+    position: relative;
+    z-index: 100;
+}
+
+.newsletter-card {
+    background: var(--primary);
+    padding: 4rem;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.newsletter-card .content {
+    flex: 1;
+}
+
+.newsletter-card h3 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-card p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+}
+
+.newsletter-form {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.newsletter-form button {
+    padding: 1.2rem 2.5rem;
+    background: var(--gold);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: #fff;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 968px) {
+    .newsletter-card { flex-direction: column; text-align: center; padding: 3rem 2rem; }
+    .newsletter-form { width: 100%; flex-direction: column; }
+    .map-overlay { position: static; border-radius: 0; padding: 2rem; text-align: center; }
+    .testimonial-card .quote { font-size: 1.4rem; }
+}
