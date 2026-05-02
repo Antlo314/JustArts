@@ -78,7 +78,7 @@ img {
 /* Navbar */
 #navbar {
     position: fixed;
-    top: 0;
+    top: 50px; /* Offset for the community ticker */
     width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
@@ -86,6 +86,7 @@ img {
 }
 
 #navbar.scrolled {
+    top: 0; /* Snap to top on scroll */
     background: rgba(18, 18, 18, 0.9);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
@@ -410,11 +411,15 @@ section {
 .community-ticker {
     background: var(--gold);
     color: var(--navy);
-    padding: 15px 0;
+    height: 50px;
+    line-height: 50px;
     overflow: hidden;
     white-space: nowrap;
     font-weight: 800;
-    position: relative;
+    position: fixed; /* Make it stick to the very top */
+    top: 0;
+    width: 100%;
+    z-index: 1100;
 }
 
 .ticker-content {
@@ -482,6 +487,27 @@ footer {
     transform: translateY(-5px);
 }
 
+.floating-donate { 
+    position: fixed; 
+    bottom: 30px !important; 
+    right: 30px !important; 
+    left: auto !important;
+    top: auto !important;
+    background: var(--primary); 
+    color: #fff; 
+    padding: 1rem 2rem; 
+    border-radius: 50px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    text-decoration: none; 
+    font-weight: 800; 
+    z-index: 2000; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+    transition: var(--transition); 
+    border: 2px solid rgba(255,255,255,0.1); 
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 3rem;
@@ -545,7 +571,33 @@ footer {
 .partners-scroll img { max-width: 100%; height: auto; opacity: 0.6; margin: 0 auto; }
 
 /* Dedicated Mobile Build Styles */
+/* Shop Button Fix */
+.shop-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    margin-top: 1rem;
+    border: 2px solid transparent;
+}
+
+.shop-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-3px);
+}
+
 @media (max-width: 968px) {
+    #navbar { top: 40px; }
+    #navbar.scrolled { top: 0; }
+    .community-ticker { height: 40px; line-height: 40px; font-size: 0.7rem; }
     #navbar {
         background: rgba(18, 18, 18, 0.8);
         backdrop-filter: blur(15px);
