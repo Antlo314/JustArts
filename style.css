@@ -76,7 +76,8 @@ img {
 
 .logo img {
     height: 50px;
-    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+    border-radius: 50%; /* Make square icon look circular if it has a background */
 }
 
 .logo-text {
@@ -171,9 +172,14 @@ section {
 .section-title {
     font-family: 'Luckiest Guy', cursive;
     font-size: clamp(2.5rem, 8vw, 4rem);
-    color: var(--primary);
+    color: #fff; /* Changed from var(--primary) for better contrast */
     text-align: center;
     margin-bottom: 4rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#founder .section-title, #faq .section-title {
+    color: var(--primary); /* Keep dark on light sections */
 }
 
 /* Impact Section */
@@ -519,3 +525,13 @@ html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
+
+/* Contrast Fixes for Labels and Meta Text */
+.partners-label, .nonprofit-tag { color: var(--gold) !important; letter-spacing: 4px; font-weight: 700; }
+.founder-title, .student-meta { color: var(--primary-light) !important; font-weight: 600; }
+.intro-text, .support-intro, .testimonial-card .role { color: #aaa !important; }
+.event-meta { color: var(--gold) !important; }
+
+/* Logo Polish */
+.logo img { background: #fff; padding: 5px; border-radius: 50%; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
