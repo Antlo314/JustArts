@@ -222,4 +222,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) hideModal();
         });
     }
+    // Mobile Bottom Nav Active State on Scroll
+    const bottomNavItems = document.querySelectorAll('.mobile-nav-item');
+    const sections = document.querySelectorAll('section, header');
+
+    window.addEventListener('scroll', () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        bottomNavItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').includes(current)) {
+                item.classList.add('active');
+            }
+        });
+    });
 });
