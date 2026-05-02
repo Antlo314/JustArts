@@ -246,3 +246,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/* Premium Interactions */
+window.addEventListener('mousemove', (e) => {
+    const cursor = document.querySelector('.custom-cursor');
+    const follower = document.querySelector('.custom-cursor-follower');
+    if(cursor && follower) {
+        gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        gsap.to(follower, { x: e.clientX - 15, y: e.clientY - 15, duration: 0.3 });
+    }
+});
+
+// GSAP Scroll Reveals
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll('section').forEach(section => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: 'power3.out'
+    });
+});
+
+// Hero Parallax
+window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const hero = document.querySelector('.hero-content');
+    if(hero) {
+        hero.style.transform = \\\	ranslateY(\\\px)\\\;
+        hero.style.opacity = 1 - (scrolled / 700);
+    }
+});
+
+// Nav Click Fix
+document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
+    link.onclick = (e) => {
+        const targetId = link.getAttribute('href');
+        if(targetId.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(targetId);
+            if(target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+});
+
