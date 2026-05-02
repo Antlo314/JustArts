@@ -80,7 +80,7 @@ img {
     position: fixed;
     top: 50px; /* Offset for the community ticker */
     width: 100%;
-    z-index: 1000;
+    z-index: 2000;
     padding: 1.5rem 0;
     transition: var(--transition);
 }
@@ -425,7 +425,7 @@ section {
 .ticker-content {
     display: inline-block;
     padding-left: 100%;
-    animation: ticker 40s linear infinite;
+    animation: ticker 20s linear infinite; /* 2x faster (from 40s) */
 }
 
 .ticker-content span {
@@ -524,7 +524,7 @@ footer {
     width: 100%;
     height: 100vh;
     background: var(--dark-bg);
-    z-index: 1500;
+    z-index: 4000; /* Extremely high to cover everything */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -595,9 +595,9 @@ footer {
 }
 
 @media (max-width: 968px) {
-    #navbar { top: 40px; }
+    #navbar { top: 40px; z-index: 2100; }
     #navbar.scrolled { top: 0; }
-    .community-ticker { height: 40px; line-height: 40px; font-size: 0.7rem; }
+    .community-ticker { height: 40px; line-height: 40px; font-size: 0.7rem; z-index: 2050; }
     #navbar {
         background: rgba(18, 18, 18, 0.8);
         backdrop-filter: blur(15px);
@@ -727,7 +727,7 @@ footer {
     }
 
     .ticker-content {
-        animation-duration: 15s !important; /* Speed up on mobile */
+        animation-duration: 7.5s !important; /* 2x faster (from 15s) */
     }
 
     .floating-donate {
