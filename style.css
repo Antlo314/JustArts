@@ -502,7 +502,7 @@ footer {
     gap: 10px; 
     text-decoration: none; 
     font-weight: 800; 
-    z-index: 2000; 
+    z-index: 3000; /* Increased to stay above everything */
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
     transition: var(--transition); 
     border: 2px solid rgba(255,255,255,0.1); 
@@ -724,6 +724,17 @@ footer {
 
     .shop-grid {
         grid-template-columns: 1fr;
+    }
+
+    .ticker-content {
+        animation-duration: 15s !important; /* Speed up on mobile */
+    }
+
+    .floating-donate {
+        bottom: 100px !important; /* Stay above mobile bottom nav */
+        right: 20px !important;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.8rem;
     }
 }
 
