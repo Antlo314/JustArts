@@ -15,13 +15,13 @@
 
 /* Global Reset & Overflow Prevention */
 .portfolio-modal {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
     z-index: 3000;
 }
 
@@ -90,9 +90,8 @@ img {
 }
 
 .logo img {
-    height: 75px; /* Slightly larger for better icon visibility */
-    mix-blend-mode: screen; /* Makes black background transparent */
-    filter: brightness(1.1) contrast(1.1);
+    height: 75px;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.2));
 }
 
 .logo-text {
@@ -659,8 +658,7 @@ html, body {
 
 /* Logo Polish */
 .logo img, .footer-logo { 
-    mix-blend-mode: screen;
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
 
