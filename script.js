@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             animateCounters();
             impactObserver.unobserve(impactSection);
         }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 }); /* Reduced threshold for better reliability */
 
     if (impactSection) impactObserver.observe(impactSection);
 
@@ -252,6 +252,8 @@ window.addEventListener('mousemove', (e) => {
     const cursor = document.querySelector('.custom-cursor');
     const follower = document.querySelector('.custom-cursor-follower');
     if(cursor && follower) {
+        cursor.style.opacity = '1';
+        follower.style.opacity = '1';
         gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
         gsap.to(follower, { x: e.clientX - 15, y: e.clientY - 15, duration: 0.3 });
     }
@@ -279,16 +281,16 @@ window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const hero = document.querySelector('.hero-content');
     if(hero) {
-        hero.style.transform = \\\	ranslateY(\\\px)\\\;
+        hero.style.transform = `translateY(${scrolled * 0.4}px)`;
         hero.style.opacity = 1 - (scrolled / 700);
     }
 });
 
 // Nav Click Fix
-document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
+document.querySelectorAll('.nav-links a, .mobile-nav-links a, .mobile-nav-item').forEach(link => {
     link.onclick = (e) => {
         const targetId = link.getAttribute('href');
-        if(targetId.startsWith('#')) {
+        if(targetId && targetId.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(targetId);
             if(target) {
