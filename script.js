@@ -83,16 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && menuOverlay) {
         menuToggle.addEventListener('click', () => {
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            if (menuOverlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
         });
 
         const hideMenu = () => {
+            menuToggle.classList.remove('active');
             menuOverlay.classList.remove('active');
             document.body.style.overflow = 'auto';
         };
 
-        closeMenu.addEventListener('click', hideMenu);
+        if (closeMenu) closeMenu.addEventListener('click', hideMenu);
         mobileLinks.forEach(link => link.addEventListener('click', hideMenu));
     }
 
