@@ -674,3 +674,9 @@ html, body {
 .support-card ul li { margin-bottom: 0.8rem; color: #aaa; }
 .support-card ul li::before { content: '?'; color: var(--gold); margin-right: 10px; }
 
+
+@media (max-width: 968px) {
+    .footer-grid { text-align: center; justify-items: center; }
+    .social-icons { justify-content: center; }
+    .footer-brand, .footer-contact, .footer-social { width: 100%; }
+}
