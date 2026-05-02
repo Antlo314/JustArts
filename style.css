@@ -1,16 +1,16 @@
 :root {
-    --primary: #7A28CB;
-    --primary-dark: #4B0082;
-    --gold: #FFD700;
+    --primary: #6B4E71; /* Sophisticated Plum */
+    --primary-light: #916B99;
+    --gold: #D4AF37; /* Antique Gold */
+    --gold-bright: #F9D423;
     --coral: #E07A5F;
-    --blue: #3D5A80;
-    --green: #81B29A;
-    --light-bg: #FDF0ED;
-    --dark-bg: #121212;
-    --text-dark: #2D2D2D;
-    --text-light: #F4F1DE;
-    --glass: rgba(255, 255, 255, 0.1);
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --navy: #1F2937;
+    --dark-bg: #111827; /* Deep Navy Gray */
+    --light-bg: #F9FAFB;
+    --text-dark: #1F2937;
+    --text-light: #F9FAFB;
+    --glass: rgba(255, 255, 255, 0.03);
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -132,21 +132,23 @@ body {
 
 .hero-title {
     font-family: 'Luckiest Guy', cursive;
-    font-size: clamp(3.5rem, 10vw, 8rem);
-    line-height: 1;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
     color: #fff;
-    text-shadow: 5px 5px 0px var(--primary), 10px 10px 0px rgba(0,0,0,0.5);
-    margin-bottom: 1rem;
+    text-shadow: 3px 3px 0px var(--primary), 6px 6px 0px rgba(0,0,0,0.3);
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease;
+    letter-spacing: -2px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    letter-spacing: 8px;
-    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    font-weight: 600;
     color: var(--gold);
     margin-bottom: 3rem;
     animation: fadeInUp 1.2s ease;
+    text-transform: uppercase;
 }
 
 .scroll-down {
@@ -184,7 +186,7 @@ body {
 
 /* Sections */
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .container {
@@ -247,6 +249,37 @@ section {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.values-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.value {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.value span {
+    color: var(--primary-light);
+    margin-right: 0.5rem;
+}
+
+.nonprofit-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    margin-top: 1rem;
 }
 
 /* Programs */
@@ -353,19 +386,20 @@ section {
 
 .founder-name {
     font-family: 'Alex Brush', cursive;
-    font-size: 4.5rem;
-    color: var(--coral);
-    margin-bottom: 0;
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
     line-height: 1;
 }
 
 .founder-title {
     font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--blue);
+    font-size: 0.9rem;
+    color: var(--navy);
     margin-bottom: 2rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    opacity: 0.8;
 }
 
 .founder-bio p {
