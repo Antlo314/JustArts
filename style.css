@@ -41,6 +41,7 @@
 
 .portfolio-modal {
     display: none !important;
+}
 
 .portfolio-modal.active {
     display: flex;
